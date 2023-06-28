@@ -1,0 +1,7 @@
+run this API by simply enter one of these following commands: 
+ - python wine_finder.py
+ - py wine_finder.py
+ - python3 wine_fincder.py
+
+the api will be ran on localhost:8000
+after running the api, u can come back to the wine-cart page to test the Image searching function
