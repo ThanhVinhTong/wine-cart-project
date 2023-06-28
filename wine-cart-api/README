@@ -1,3 +1,5 @@
+Begin with using the "pip install -r requirements.txt" command to install all of the Python modules and packages listed in the requirements.txt file
+
 run this API by simply enter one of these following commands: 
  - python wine_finder.py
  - py wine_finder.py
