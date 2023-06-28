@@ -1,0 +1,122 @@
+.banner {
+    flex: 0 0 75%;
+    max-width: 75%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px
+}
+
+.menu-banner {
+    display: block;
+
+    ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+
+        li:first-child {
+            a {
+                padding: 0 10px 20px 0;
+            }
+        }
+
+        li {
+            a {
+                padding: 0 10px 20px 10px;
+                display: block;
+                font-weight: 500;
+                color: #18181D;
+
+                &:hover {
+                    color: var(--default-brown);
+                    transition: .4s;
+                }
+            }
+
+
+        }
+    }
+}
+
+.slider-banner {
+    padding: 15px 40px;
+    background-color: #ffeae0;
+    border-radius: 8px;
+    height: 385px;
+}
+
+.slick-slider {
+
+    .container {
+        display: flex !important;
+        width: 750px;
+    }
+
+    .content {
+
+        flex: 0 0 50%;
+        max-width: 50%;
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        span {
+            margin-bottom: 20px;
+        }
+
+        .description {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #838383;
+        }
+
+        .custom-btn {
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            position: relative;
+            background-color: #a74717;
+            border: 0;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 12px 30px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            border-radius: 25px;
+            z-index: 1;
+            box-shadow: 0 3px 24px rgba(0, 0, 0, .1);
+            width: 50%;
+        }
+    }
+
+    .img-banner {
+        flex: 0 0 50%;
+        max-width: 50%;
+        position: relative;
+        width: 100%;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}

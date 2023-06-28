@@ -1,0 +1,15 @@
+.wrapper {
+    position: relative;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: var(--default-layout-width);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}

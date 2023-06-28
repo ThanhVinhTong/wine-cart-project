@@ -1,0 +1,16 @@
+.wrapper {
+    padding: 20px 0 20px;
+    position: relative;
+}
+
+.container {
+    max-width: 1140px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+

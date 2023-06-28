@@ -1,0 +1,100 @@
+.home-slide {
+    width: 100%;
+    position: relative;
+
+    .container {
+        .slick-slider {
+            position: relative;
+            display: block;
+            box-sizing: border-box;
+            user-select: none;
+
+            &:hover {
+                .control-btn {
+                    .prev {
+                        opacity: 1;
+                    }
+
+                    .next {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .control-btn {
+
+                .prev {
+                    position: absolute;
+                    top: 47%;
+                    left: 40px;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 60px;
+                    background-color: var(--color-pale-skin);
+                    transform: .4s;
+                    z-index: 1000;
+                    border-radius: 50%;
+                    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, .09);
+                    opacity: 0;
+
+                    &:hover {
+                        background-color: #a74717;
+                        box-shadow: 4px 3px 24px #c96838;
+                        cursor: pointer;
+                    }
+
+                    svg {
+                        font-size: 24px;
+                        color: #18181D;
+                        display: flex;
+                        margin: auto;
+
+                        &:hover {
+                            color: var(--default-white);
+                        }
+                    }
+                }
+
+                .next {
+                    position: absolute;
+                    top: 47%;
+                    right: 40px;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 60px;
+                    background-color: var(--color-pale-skin);
+                    transform: .4s;
+                    z-index: 5;
+                    border-radius: 50%;
+                    box-shadow: 0 1px 8px 0 rgba(0, 0, 0, .09);
+                    opacity: 0;
+
+                    &:hover {
+                        background-color: #a74717;
+                        box-shadow: 4px 3px 24px #c96838;
+                        cursor: pointer;
+                    }
+
+                    svg {
+                        font-size: 24px;
+                        color: #18181D;
+                        display: flex;
+                        margin: auto;
+
+                        &:hover {
+                            color: var(--default-white);
+                        }
+                    }
+                }
+            }
+
+            .box-slider {
+                img {
+                    width: 100%;
+                    height: 700px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,192 @@
+.header-middle {
+    background-color: var(--default-white);
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: var(--default-layout-width);
+
+    .navbar {
+        padding: 15px 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    img {
+        height: var(--default-layout-height);
+        width: 170px;
+    }
+}
+
+.input-search {
+    display: flex;
+}
+
+.cates {
+    position: relative;
+    background-color: var(--color-pale-skin);
+    border-radius: 25px 0 0 25px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    span {
+        color: var(--default-black);
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    &:hover .submenu {
+        transform: rotateX(0deg);
+        opacity: 1;
+        visibility: visible;
+
+        ::-webkit-scrollbar-thumb {
+            background: rgb(220, 220, 220);
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+    }
+}
+
+.submenu {
+    position: absolute;
+    top: 56px;
+    left: -54px;
+    width: 100%;
+    background-color: var(--default-white);
+    transition: .3s;
+    opacity: 0;
+    transform-style: preserve-3d;
+    transform: rotateX(-75deg);
+    transform-origin: 0% 0%;
+    visibility: hidden;
+    z-index: 998;
+    min-width: 230px;
+    border: 1px solid var(--color-pale-skin);
+    box-shadow: 0 3px 24px rgba(0, 0, 0, .04);
+
+    &::after {
+        position: absolute;
+        content: '';
+        position: absolute;
+        right: 110px;
+        top: -6px;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #ccc;
+        clear: both;
+    }
+
+    .drop-scroll {
+        position: relative;
+        overflow-y: scroll;
+        width: auto;
+        height: 300px;
+
+        label {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            color: #838383;
+            font-weight: 400;
+            border-bottom: 1px solid var(--color-pale-skin);
+            cursor: pointer;
+            margin: 0;
+            transition: .3s;
+            font-size: 14px;
+
+            &:hover {
+                background-color: var(--color-pale-skin);
+                transition: 0.4s;
+            }
+        }
+    }
+}
+
+
+.input {
+    display: flex;
+    width: 400px;
+
+    .form-input {
+        border-radius: 0;
+        height: 50px;
+        padding: 8px 15px;
+        border: 1px solid var(--color-pale-skin);
+        width: 100%;
+        color: var(--color-grey);
+        background-color: var(--default-white);
+        letter-spacing: 0.1px;
+        font-size: 14px;
+    }
+
+    .search {
+        background-color: transparent;
+        border: 1px solid var(--color-pale-skin);
+        border-radius: 0 25px 25px 0;
+        width: 50px;
+        height: 50px;
+
+        &:hover {
+            background-color: var(--color-pale-skin);
+            transition: 0.4s;
+        }
+
+        svg {
+            color: var(--color-grey);
+            margin: 0 auto;
+            display: flex;
+            width: 14px;
+        }
+    }
+}
+
+.controls {
+    border-radius: 5px;
+    border: 1px solid var(--color-pale-skin);
+
+    &:hover {
+        background-color: var(--color-pale-skin);
+        transition: 0.4s;
+    }
+
+    svg {
+        width: 26px;
+        color: var(--color-grey);
+    }
+
+    .your-cart {
+        width: auto;
+        height: auto;
+        border-radius: 8px;
+        padding: 5px 15px;
+        display: flex;
+        align-items: center;
+    }
+
+    .content-cart {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+
+        span {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--default-black);
+
+            +span {
+                color: var(--default-grown);
+            }
+        }
+    }
+}
