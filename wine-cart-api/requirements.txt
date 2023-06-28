@@ -1,0 +1,6 @@
+torch
+urllib3
+pandas
+Pillow
+torchvision
+fastapi
