@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Dialog, Transition } from '@headlessui/react';
 
 import { WineProps } from '@/types';
+import CustomButton from './CustomButton';
 
 interface WineDetailsProps {
     isOpen: boolean;
@@ -85,6 +86,11 @@ const WineDetails = ({ isOpen, closeModal, wine }: WineDetailsProps) => {
                                         ))}
                                     </div>
                                 </div>
+                                <CustomButton
+                                    title='Add to Cart'
+                                    containerStyles='py-[16px] rounded-full bg-primary-blue'
+                                    textStyles='text-white text-[14px] leading-[17px] font-bold'
+                                />
                             </Dialog.Panel>
                         </Transition.Child>
                     </div>

@@ -31,6 +31,12 @@ export interface WineProps {
     description: string;
 }
 
+export interface AccountProps {
+    user_name: string;
+    email: string;
+    password: string;
+}
+
 export interface FilterProps {
     producer: string;
     country: string;
@@ -38,6 +44,7 @@ export interface FilterProps {
     wine_type: string;
     limit: number;
 }
+
 
 export interface OptionProps {
     title: string;

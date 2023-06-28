@@ -1,6 +1,6 @@
 import { initMongoose } from "@/lib/mongoose";
 import Product from "@/models/Product";
-import { FilterProps, WineProps } from "@/types";
+import { FilterProps } from "@/types";
 
 async function getWines(filters: FilterProps) {
     await initMongoose();

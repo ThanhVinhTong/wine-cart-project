@@ -1,50 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-:root {
-  /* color */
-  --default-white: #fff;
-  --default-black: #18181d;
-  --default-brown: #a74717;
-  --default-bg-color-hover: #18181d;
-
-  --color-pale-skin: #ffeae0;
-  --color-grey: #838383;
-  --default-background-color-header: #c96838;
-  --background-color-babel: #ffa80a;
-  /* height, width */
-  --default-layout-width: 1140px;
-  --default-layout-height: 44px;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Manrope', sans-serif;
-}
-
-button,
-input,
-[tabindex] {
-  outline: none;
-  border: none;
-}
-
-a[href] {
-  text-decoration: none;
-  font-size: 14px;
-  outline: none;
+  font-family: "Manrope", sans-serif;
 }
 
 /* START: General styles */
