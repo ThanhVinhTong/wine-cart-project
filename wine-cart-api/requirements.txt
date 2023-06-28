@@ -4,3 +4,4 @@ pandas
 Pillow
 torchvision
 fastapi
+uvicorn
