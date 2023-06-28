@@ -1,6 +1,6 @@
-Begin with using the "pip install -r requirements.txt" command to install all of the Python modules and packages listed in the requirements.txt file
-
-run this API by simply enter one of these following commands: 
+Step 1: Download CORS Unblock from: https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino
+Step 2: Using the "pip install -r requirements.txt" command to install all of the Python modules and packages listed in the requirements.txt file
+Step 3: Run this API by simply enter one of these following commands: 
  - python wine_finder.py
  - py wine_finder.py
  - python3 wine_fincder.py
