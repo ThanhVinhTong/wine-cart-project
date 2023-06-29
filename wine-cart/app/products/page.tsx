@@ -7,6 +7,7 @@ import {
 } from '@/components';
 import getWines from '../api/products';
 import { vintages, wine_type } from '@/constants';
+import getAccounts from '../api/accounts';
 
 export default async function Home({ searchParams }: any) {
   const allWines = await getWines({
@@ -17,6 +18,8 @@ export default async function Home({ searchParams }: any) {
     limit: searchParams.limit || 10,
   });
 
+  const allAccounts = await getAccounts();
+  
   const isDataEmpty =
     !Array.isArray(allWines) || allWines.length < 1 || !allWines;
 

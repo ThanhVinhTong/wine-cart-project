@@ -57,7 +57,7 @@ export function BannerCategory() {
                   <h1 className={cx('title')}>{value.title}</h1>
                   <span>up to {value.discount}</span>
                   <p className={cx('description')}>{value.description}</p>
-                  <WSButton href="/" buttonType="round">
+                  <WSButton href="/products" buttonType="round">
                     Shop now
                   </WSButton>
                 </div>

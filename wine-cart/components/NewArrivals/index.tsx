@@ -90,8 +90,8 @@ export function NewArrivals() {
                     <span>{value.babel}</span>
                   </div>
                   <div className={cx('arrivals-top')}>
-                    <a href="/details">
-                      <img src={value.image} alt="" />
+                    <a href="/products">
+                      <img src={value.image} alt="" width={250}/>
                     </a>
                   </div>
                   <div className={cx('arrival-body')}>
@@ -103,10 +103,10 @@ export function NewArrivals() {
                   </div>
                   <div className={cx('arrivals-footer')}>
                     <div className={cx('btn')}>
-                      <WSButton href="/" buttonType="add">
+                      <WSButton href="/products" buttonType="add">
                         Add To Cart
                       </WSButton>
-                      <WSButton href="/" buttonType="view">
+                      <WSButton href="/products" buttonType="view">
                         Quick View
                       </WSButton>
                     </div>
@@ -120,8 +120,8 @@ export function NewArrivals() {
                     <span>{value.babelSale}</span>
                   </div>
                   <div className={cx('arrivals-top')}>
-                    <Link href="/" className={cx('img-arrival')}>
-                      <img src={value.image} alt="" />
+                    <Link href="/products" className={cx('img-arrival')}>
+                      <img src={value.image} alt="" width={250}/>
                     </Link>
                   </div>
                   <div className={cx('arrival-body')}>
@@ -134,10 +134,10 @@ export function NewArrivals() {
                   </div>
                   <div className={cx('arrivals-footer')}>
                     <div className={cx('btn')}>
-                      <WSButton href="/" buttonType="add">
+                      <WSButton href="/products" buttonType="add">
                         Add To Cart
                       </WSButton>
-                      <WSButton href="/" buttonType="view">
+                      <WSButton href="/products" buttonType="view">
                         Quick View
                       </WSButton>
                     </div>

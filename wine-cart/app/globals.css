@@ -4,6 +4,42 @@
 @tailwind components;
 @tailwind utilities;
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+:root {
+  /* color */
+  --default-white: #fff;
+  --default-black: #18181d;
+  --default-brown: #a74717;
+  --default-bg-color-hover: #18181d;
+
+  --color-pale-skin: #ffeae0;
+  --color-grey: #838383;
+  --default-background-color-header: #c96838;
+  --background-color-babel: #ffa80a;
+  /* height, width */
+  --default-layout-width: 1140px;
+  --default-layout-height: 44px;
+}
+
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+}
+
+a[href] {
+  text-decoration: none;
+  font-size: 14px;
+  outline: none;
+}
+
 * {
   margin: 0;
   padding: 0;

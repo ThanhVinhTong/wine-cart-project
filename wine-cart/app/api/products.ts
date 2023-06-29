@@ -2,7 +2,7 @@ import { initMongoose } from "@/lib/mongoose";
 import Product from "@/models/Product";
 import { FilterProps } from "@/types";
 
-async function getWines(filters: FilterProps) {
+export async function getWines(filters: FilterProps) {
     await initMongoose();
 
     const { producer, country, vintage, wine_type, limit } = filters;

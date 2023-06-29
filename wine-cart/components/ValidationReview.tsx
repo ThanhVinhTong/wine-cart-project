@@ -1,6 +1,8 @@
 import * as Yup from 'yup';
-import { REGEX_PASSWORD } from './utils';
 
+const REGEX_PASSWORD =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?\/_])[A-Za-z\d~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?\/_]{6,15}$/;
+  
 const reGexPassword = REGEX_PASSWORD;
 
 export const validationReview = Yup.object({

@@ -31,7 +31,7 @@ export function DailyDeals() {
                 <span>{value.babel} OFF</span>
               </div>
               <div className={cx('daily-img')}>
-                <Link href="/">
+                <Link href="/products">
                   <img src={value.image} alt="" />
                 </Link>
                 <div className={cx('daily-countdown')}>{value.countdown}</div>
@@ -46,7 +46,7 @@ export function DailyDeals() {
                 <span className={cx('price-new')}>{value.priceNew}</span>
                 <span className={cx('price-old')}>{value.priceOld}</span>
               </div>
-              <WSButton buttonType="round" href="/">
+              <WSButton buttonType="round" href="/products">
                 Buy Now
               </WSButton>
             </div>

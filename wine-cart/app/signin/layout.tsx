@@ -1,9 +1,6 @@
 'use client';
+
 import { WSButton, FooterContent } from '@/components';
-export const metadata = {
-  title: 'Wine Cart',
-  description: 'Discover your desired wines',
-};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

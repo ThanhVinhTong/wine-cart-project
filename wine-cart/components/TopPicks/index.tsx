@@ -78,7 +78,7 @@ export function TopPick() {
                   <div className={cx('border')}>{value.icon}</div>
                 </div>
                 <h5 className={cx('product-title')}>
-                  <Link href="/">{value.link}</Link>
+                  <Link href="/products">{value.link}</Link>
                 </h5>
                 <div className={cx('product-price')}>
                   <span>{value.price}</span>
