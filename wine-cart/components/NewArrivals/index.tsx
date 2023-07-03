@@ -1,10 +1,6 @@
 'use client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faArrowLeft,
-  faArrowRight,
-  faStar,
-} from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight, faStar } from '@fortawesome/free-solid-svg-icons';
 import DataNew from './DataNew';
 
 import styles from './NewArrivals.module.scss';
@@ -22,10 +18,7 @@ const SampleNextArrow = (props: any) => {
     return (
       <div className={cx('control-btn-hidden')} onClick={onClick}>
         <button className={cx('next-hidden')}>
-          <FontAwesomeIcon
-            icon={faArrowRight as IconProp}
-            className={cx('hidden-next')}
-          />
+          <FontAwesomeIcon icon={faArrowRight as IconProp} className={cx('hidden-next')} />
         </button>
       </div>
     );
@@ -44,10 +37,7 @@ const SamplePrevArrow = (props: any) => {
     return (
       <div className={cx('control-btn-hidden')} onClick={onClick}>
         <button className={cx('prev-hidden')}>
-          <FontAwesomeIcon
-            icon={faArrowLeft as IconProp}
-            className={cx('hidden-prev')}
-          />
+          <FontAwesomeIcon icon={faArrowLeft as IconProp} className={cx('hidden-prev')} />
         </button>
       </div>
     );
@@ -83,15 +73,12 @@ export function NewArrivals() {
               return (
                 <div className={cx('arrivals')} key={index}>
                   <div className={cx('arrivals-babel')}>
-                    <FontAwesomeIcon
-                      icon={faStar as IconProp}
-                      className={cx('star')}
-                    />
+                    <FontAwesomeIcon icon={faStar as IconProp} className={cx('star')} />
                     <span>{value.babel}</span>
                   </div>
                   <div className={cx('arrivals-top')}>
                     <a href="/products">
-                      <img src={value.image} alt="" width={250}/>
+                      <img src={value.image} alt="" width={250} />
                     </a>
                   </div>
                   <div className={cx('arrival-body')}>
@@ -121,7 +108,7 @@ export function NewArrivals() {
                   </div>
                   <div className={cx('arrivals-top')}>
                     <Link href="/products" className={cx('img-arrival')}>
-                      <img src={value.image} alt="" width={250}/>
+                      <img src={value.image} alt="" width={250} />
                     </Link>
                   </div>
                   <div className={cx('arrival-body')}>

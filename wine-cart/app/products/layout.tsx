@@ -1,5 +1,4 @@
-import { FooterContent } from '@/components';
-import NavBar from '@/components/NavBar';
+import { FooterContent, HeaderContent } from '@/components';
 
 export const metadata = {
   title: 'Wine Cart',
@@ -10,7 +9,7 @@ export default function RootLayout({ children }: any) {
   return (
     <html lang="en">
       <body className="relative">
-        <NavBar />
+        <HeaderContent />
         <main className="grow">{children}</main>
         <FooterContent />
       </body>

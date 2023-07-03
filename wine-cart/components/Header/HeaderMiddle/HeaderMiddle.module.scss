@@ -18,6 +18,7 @@
     img {
         height: var(--default-layout-height);
         width: 170px;
+        object-fit: contain;
     }
 }
 

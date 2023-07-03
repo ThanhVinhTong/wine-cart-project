@@ -46,7 +46,7 @@ export function SignUp() {
               <div className={cx('form-input')}>
                 <WSInput placeholder="User Name" {...register('username')} errors={errors.username} />
                 <WSInput placeholder="Email" {...register('email')} errors={errors.email} />
-                <WSInput type="password" placeholder="password" {...register('password')} errors={errors.email} />
+                <WSInput password placeholder="password" {...register('password')} errors={errors.password} />
                 <WSButton buttonType="brown">Sign Up</WSButton>
                 <p className={cx('have-account')}>
                   Already have an account? {''}

@@ -3,11 +3,7 @@ import Link from 'next/link';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import {
-  faSquareFacebook,
-  faSquareTwitter,
-  faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
+import { faSquareFacebook, faSquareTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 import styles from './FooterBottom.module.scss';
@@ -28,7 +24,7 @@ export function FooterBottom() {
       <div className={cx('container')}>
         <div className={cx('container-top')}>
           <div className={cx('logo')}>
-            <img src="../../../../../images/bidouno.png" alt="" />
+            <img src="../../../../../images/Logo2.png" alt="" />
           </div>
           <div className={cx('get-app')}>
             <Link href="/">
@@ -108,25 +104,13 @@ export function FooterBottom() {
               <h5>Social-Media</h5>
               <ul className="flex items-center">
                 <Link href="/">
-                  <FontAwesomeIcon
-                    icon={faSquareFacebook as IconProp}
-                    beatFade
-                    className={cx('facebook')}
-                  />
+                  <FontAwesomeIcon icon={faSquareFacebook as IconProp} beatFade className={cx('facebook')} />
                 </Link>
                 <Link href="/">
-                  <FontAwesomeIcon
-                    icon={faSquareTwitter as IconProp}
-                    beatFade
-                    className={cx('twitter')}
-                  />
+                  <FontAwesomeIcon icon={faSquareTwitter as IconProp} beatFade className={cx('twitter')} />
                 </Link>
                 <Link href="/">
-                  <FontAwesomeIcon
-                    icon={faInstagram as IconProp}
-                    beatFade
-                    className={cx('instagram')}
-                  />
+                  <FontAwesomeIcon icon={faInstagram as IconProp} beatFade className={cx('instagram')} />
                 </Link>
               </ul>
             </div>

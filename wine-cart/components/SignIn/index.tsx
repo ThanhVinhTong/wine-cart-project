@@ -44,12 +44,18 @@ export function SignIn() {
             <form action="" onSubmit={handleSubmit(onSubmit)}>
               <div className={cx('form-input')}>
                 <WSInput placeholder="Email" {...register('email')} errors={errors.email} />
-                <WSInput type="password" placeholder="password" {...register('password')} errors={errors.password} />
+                <WSInput
+                  password
+                  // type="password"
+                  placeholder="password"
+                  {...register('password')}
+                  errors={errors.password}
+                />
                 <WSButton buttonType="brown">Sign Up</WSButton>
                 <p className={cx('have-account')}>
                   Don't have an account? {''}
                   <WSButton href="/signup" className={cx('sign-in')}>
-                    Sign Upppppppp
+                    Sign Up
                   </WSButton>
                 </p>
               </div>

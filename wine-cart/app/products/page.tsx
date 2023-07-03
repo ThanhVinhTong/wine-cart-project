@@ -1,10 +1,4 @@
-import {
-  CustomFilter,
-  Hero,
-  SearchBar,
-  ShowMore,
-  WineCard,
-} from '@/components';
+import { CustomFilter, Hero, SearchBar, ShowMore, WineCard } from '@/components';
 import getWines from '../api/products';
 import { vintages, wine_type } from '@/constants';
 import getAccounts from '../api/accounts';
@@ -19,9 +13,8 @@ export default async function Home({ searchParams }: any) {
   });
 
   const allAccounts = await getAccounts();
-  
-  const isDataEmpty =
-    !Array.isArray(allWines) || allWines.length < 1 || !allWines;
+
+  const isDataEmpty = !Array.isArray(allWines) || allWines.length < 1 || !allWines;
 
   return (
     <main className="overflow-hidden">
@@ -57,9 +50,7 @@ export default async function Home({ searchParams }: any) {
           </section>
         ) : (
           <div className="home__error-container">
-            <h2 className="text-black text-xl font-bold">
-              What have we here? NOTHING!!!
-            </h2>
+            <h2 className="text-black text-xl font-bold">What have we here? NOTHING!!!</h2>
           </div>
         )}
       </div>

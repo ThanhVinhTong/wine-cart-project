@@ -1,86 +1,79 @@
-"use client"
+'use client';
 
-import { updateSearchParams } from "@/utils"
-import CustomButton from "./CustomButton"
-import Image from "next/image"
-import { useRouter } from "next/navigation"
-import { ChangeEvent, useState } from "react"
+import { updateSearchParams } from '@/utils';
+import CustomButton from './CustomButton';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import { ChangeEvent, useState } from 'react';
 
 const Hero = () => {
+  const apiUrl = 'http://localhost:8000/';
 
-	const apiUrl = 'http://localhost:8000/'
-	
-	const router = useRouter();
-	const [selectedFile, setSelectedFile] = useState<File | null>(null);
-	const [imagePrev, setImagePrev] = useState('');
+  const router = useRouter();
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [imagePrev, setImagePrev] = useState('');
 
-	const fileChangeHandler = (e: ChangeEvent) => {
-		const target = e.target as HTMLInputElement;
-		const file: File = (target.files as FileList)[0];
+  const fileChangeHandler = (e: ChangeEvent) => {
+    const target = e.target as HTMLInputElement;
+    const file: File = (target.files as FileList)[0];
 
-		setSelectedFile(file)
-		console.log(file)
-	}
+    setSelectedFile(file);
+    console.log(file);
+  };
 
-	const handleSubmit = async () => {
-		const formData = new FormData();
+  const handleSubmit = async () => {
+    const formData = new FormData();
 
-		formData.append(
-			"uploadFile",
-			selectedFile as Blob,
-			selectedFile?.name
-		);
+    formData.append('uploadFile', selectedFile as Blob, selectedFile?.name);
 
-		const requestOptions = {
-			method: 'POST',
-			body: formData
-		};
+    const requestOptions = {
+      method: 'POST',
+      body: formData,
+    };
 
-		await fetch(apiUrl, requestOptions)
-		.then(response => response.json())
-		.then(function(response) {
-			console.log("returned message: ", response)
-			const newPathName = updateSearchParams("producer", `${response['producer']}`);
-			
-			router.push(newPathName)
-		})
+    await fetch(apiUrl, requestOptions)
+      .then((response) => response.json())
+      .then(function (response) {
+        console.log('returned message: ', response);
+        const newPathName = updateSearchParams('producer', `${response['producer']}`);
 
-		if( selectedFile ) { setImagePrev(URL.createObjectURL(selectedFile)) }
-	}
+        router.push(newPathName);
+      });
 
-	return (
-		<div className='hero'>
-			<div className='flex-1 pt-36 padding-x'>
-				<h1 className='hero__title'>
-					Find & buy your desired wines -- Quick & Easy!
-				</h1>
+    if (selectedFile) {
+      setImagePrev(URL.createObjectURL(selectedFile));
+    }
+  };
 
-				<p className='hero__subtitle'>
-					Elevate Your Wine Experience with Effortless Selection and Delivery
-				</p>
+  return (
+    <div className="hero">
+      <div className="flex-1 pt-36 padding-x">
+        <h1 className="hero__title">Find & buy your desired wines -- Quick & Easy!</h1>
 
-				<div className="flex">
-					<form>
-						<fieldset>
-							<input onChange={fileChangeHandler} name="uploadFile" type="file" accept="image/*" id="imgInp"></input>
-						</fieldset>
-						<CustomButton
-							title="Explore Similar Wines"
-							containerStyles="bg-primary-blue text-white rounded-full mt-10"
-							handleClick={handleSubmit}
-						/>
-					</form>
-					{imagePrev ? <Image id="prevImg" src={imagePrev} alt="Preview Image" height={250} width={250}/> : <></>}
-				</div>
-			</div>
-			<div className="hero__image-container">
-				<div className="hero__image">
-					<Image src="/hero-wine-bottle-image.jpg" alt="hero" fill className="object-contain" />
-				</div>
-				<div className="hero__image-overlay" />
-			</div>
-		</div>
-	)
-}
+        <p className="hero__subtitle">Elevate Your Wine Experience with Effortless Selection and Delivery</p>
 
-export default Hero
+        <div className="flex">
+          <form>
+            <fieldset>
+              <input onChange={fileChangeHandler} name="uploadFile" type="file" accept="image/*" id="imgInp"></input>
+            </fieldset>
+            <CustomButton
+              title="Explore Similar Wines"
+              containerStyles="bg-primary-blue text-white rounded-full mt-10"
+              handleClick={handleSubmit}
+            />
+          </form>
+          {imagePrev ? <Image id="prevImg" src={imagePrev} alt="Preview Image" height={250} width={250} /> : <></>}
+        </div>
+      </div>
+      <div className="hero__image-container">
+        <div className="hero__image">
+          <Image src="/hero-wine-bottle-image.jpg" alt="hero" fill className="object-contain" />
+        </div>
+        <div className="hero__image-overlay" />
+      </div>
+    </div>
+  );
+};
+
+export default Hero;

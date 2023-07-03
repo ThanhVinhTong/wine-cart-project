@@ -11,7 +11,7 @@ export function HeaderMiddle() {
       <div className={cx('container')}>
         <nav className={cx('navbar')}>
           <Link href="/">
-            <img src="../../../../images/bidouno.png" alt="" />
+            <img src="../../../images/Logo2.png" alt="" />
           </Link>
           {/* <div className={cx('input-search')}>
             <div className={cx('cates')}>
