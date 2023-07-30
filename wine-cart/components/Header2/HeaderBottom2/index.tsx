@@ -9,7 +9,7 @@ const cx = classNames.bind(styles);
 
 interface HeaderBottomProps {}
 
-export function HeaderBottom(props: HeaderBottomProps) {
+export function HeaderBottom2(props: HeaderBottomProps) {
   const [sticky, setSticky] = useState({ isSticky: false, offset: 0 });
   const stickyHeader = useRef<HTMLDivElement>(null);
 

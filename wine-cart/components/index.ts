@@ -22,6 +22,7 @@ export {
 
 export * from './Footer'
 export * from './Header'
+export * from './Header2'
 export * from './Category'
 export * from './Slider'
 export * from './NewArrivals'
@@ -34,3 +35,5 @@ export * from './SignUp'
 export * from './SignIn'
 export * from './ValidationReview'
 export * from './WSInput'
+export * from './Carts'
+export * from './SuccessBuyCart'

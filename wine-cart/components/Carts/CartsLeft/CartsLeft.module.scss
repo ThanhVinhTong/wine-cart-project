@@ -1,0 +1,33 @@
+.left {
+    margin-bottom: 20px;
+    width: 788px;
+    float: left;
+    box-sizing: border-box;
+}
+
+.list-header {
+    background-color: #fff;
+    margin-bottom: 12px;
+}
+
+.list-header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    font-size: 12px;
+    line-height: 14px;
+    color: #757575;
+}
+
+.list-header-main {
+    flex-direction: row;
+    justify-content: flex-start;
+    line-height: 40px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-transform: uppercase;
+}

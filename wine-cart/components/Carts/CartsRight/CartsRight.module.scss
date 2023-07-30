@@ -1,0 +1,106 @@
+.right {
+    width: 388px;
+    float: right;
+}
+
+.summary-section {
+    padding: 8px 12px 0;
+    background: #fff;
+}
+
+.summary-section-content {
+    padding-bottom: 16px;
+}
+
+.summary-section-heading {
+    font-size: 18px;
+    color: #212121;
+    margin-bottom: 14px;
+    position: relative;
+    font-weight: 500;
+}
+
+.checkout-summary-rows {
+    margin-bottom: 15px;
+}
+
+.checkout-summary-row {
+    display: -webkit-box;
+    width: 100%;
+    margin-bottom: 16px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.checkout-summary-main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.checkout-summary-label {
+    font-size: 14px;
+    color: #757575;
+    letter-spacing: 0;
+    line-height: 21px;
+}
+
+.checkout-summary-value {
+    font-size: 16px;
+    line-height: 21px;
+    text-align: right;
+    color: #202020;
+    letter-spacing: -.44px;
+}
+
+.text-through {
+    margin-right: 5px;
+    text-decoration: line-through;
+}
+
+.voucher-input {
+    margin: 0;
+    padding: 8px 14px;
+    background: #fff;
+}
+
+.voucher-input-inner {
+    display: flex;
+    width: 100%;
+    margin-bottom: 4px;
+    justify-content: space-between;
+}
+
+.voucher-input-control {
+    border-color: #dadada;
+}
+
+.voucher-input-col {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.checkout-order-total {
+    margin-top: 10px;
+}
+
+.checkout-order-total-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.checkout-order-total-title {
+    display: table-cell;
+    font-size: 14px;
+    color: #202020;
+    line-height: 16px;
+}
+
+.checkout-order-total-fee {
+    display: table-cell;
+    font-size: 18px;
+    color: #f57224;
+}

@@ -8,6 +8,7 @@ import { WSButton, WSInput, validationReview } from '@/components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWineGlass } from '@fortawesome/free-solid-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { useEffect, useRef, useState } from 'react';
 const cx = classNames.bind(style);
 
 export function SignIn() {
@@ -26,8 +27,24 @@ export function SignIn() {
   });
   const onSubmit = (values: any) => {
     console.log('value', values);
-    reset();
+
+    // reset();
   };
+  const [countdown, setCountdown] = useState(3);
+
+  function submit() {
+    const timer = setInterval(() => {
+      setCountdown((prevState) => prevState - 1);
+    }, 1000);
+    if (countdown === 0) {
+      window.location.href = '/buycartsuccess';
+      setCountdown(0);
+      clearInterval(timer);
+      return;
+    }
+    return () => clearInterval(timer);
+  }
+
   return (
     <div className={cx('section')}>
       <div className={cx('container')}>
@@ -51,7 +68,9 @@ export function SignIn() {
                   {...register('password')}
                   errors={errors.password}
                 />
-                <WSButton buttonType="brown">Sign Up</WSButton>
+                <WSButton buttonType="brown" handleClick={submit} href="/username">
+                  Sign In
+                </WSButton>
                 <p className={cx('have-account')}>
                   Don't have an account? {''}
                   <WSButton href="/signup" className={cx('sign-in')}>

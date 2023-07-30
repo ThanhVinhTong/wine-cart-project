@@ -1,0 +1,40 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.formActive {
+    padding: 35px 0 30px 0;
+    display: flex;
+    justify-content: center;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        background-color: rgb(248, 241, 233);
+        padding: 20px;
+
+        h1 {
+            padding: 15px;
+        }
+
+        span {
+            display: flex;
+            margin: auto;
+            padding: 15px;
+
+            p {
+                color: red;
+            }
+        }
+
+        img {
+            display: flex;
+            margin: auto;
+            width: 300px;
+            height: 55px;
+        }
+    }
+}

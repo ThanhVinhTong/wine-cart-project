@@ -5,7 +5,7 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import styles from './HeaderMiddle.module.scss';
 import classNames from 'classnames/bind';
 const cx = classNames.bind(styles);
-export function HeaderMiddle() {
+export function HeaderMiddle2() {
   return (
     <div className={cx('header-middle')}>
       <div className={cx('container')}>
