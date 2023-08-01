@@ -1,7 +1,7 @@
 # wine-cart-project
 
 System Over view:
-![alt text](https://github.com/VinhTongThanh/wine-cart-project/blob/main/System_Overview.png)?raw=true)
+![alt text](https://github.com/VinhTongThanh/wine-cart-project/blob/main/System_Overview.png)
 
 The three primary interrelated components of the system overview are the Web Server, Model Training, and Data Crawling. Each component is essential to developing the "Find Similar Wines" feature and showcasing the trained model's effectiveness.
 
