@@ -74,6 +74,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def root():
+    return {"status": "ok", "message": "wine-cart api is running"}
+
+@app.get("/healthz")
+def healthz():
+    return {"ok": True}
+
 @app.post("/")
 async def classify_producer(uploadFile: UploadFile):
     print(uploadFile)
