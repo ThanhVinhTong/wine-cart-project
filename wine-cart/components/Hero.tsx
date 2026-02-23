@@ -7,9 +7,7 @@ import { useRouter } from 'next/navigation';
 import { ChangeEvent, useState } from 'react';
 
 const Hero = () => {
-  const rawBaseUrl = process.env.NEXT_PUBLIC_WINE_FINDER_API_URL || "https://wine-cart-api-f33k.onrender.com";
-  const baseUrl = rawBaseUrl.startsWith("http") ? rawBaseUrl : `https://${rawBaseUrl}`;
-  const classifyProducerUrl = `${baseUrl.replace(/\/$/, "")}/classify-producer`;
+  const classifyProducerUrl = '/api/classify-producer';
 
   const router = useRouter();
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
