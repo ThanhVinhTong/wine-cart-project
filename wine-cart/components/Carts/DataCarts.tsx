@@ -1,4 +1,4 @@
-import { ListCartItem } from '@/models';
+import { ListCartItem } from '@/types';
 
 export const DataCarts: ListCartItem[] = [
   {

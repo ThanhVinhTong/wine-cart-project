@@ -60,3 +60,11 @@ export interface ShowMoreProps {
     pageNumber: number;
     isNext: boolean;
 }
+
+export interface ListCartItem {
+    id: number;
+    isChoose: boolean;
+    image: string;
+    product: string;
+    price: string;
+}

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { ListCartItem } from '@/models';
+import { ListCartItem } from '@/types';
 import { useState } from 'react';
 import { WSCheckbox } from '@/components/WSCheckBox';
 
