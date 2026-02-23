@@ -1,9 +1,9 @@
 import torch
 import uvicorn
 from PIL import Image
+from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, UploadFile, File
-from starlette.responses import JSONResponse
+from fastapi import FastAPI, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
 import torch.nn as nn
@@ -16,6 +16,7 @@ model_weights = 'ResNet50_Weights.DEFAULT'
 number_classes = 75
 api_host = "127.0.0.1"
 api_port = 8000
+inference_model = None
 
 label_id = ['7colores', 'abtao', 'albertbichot', 'allegrini', 'anakena',
             'antinori', 'arrogantfrog', 'banfi', 'barton&guestier', 'bertani',
@@ -39,7 +40,7 @@ def create_model(model_path):
     model = models.resnet50(weights=model_weights)
     num_features = model.fc.in_features
     model.fc = nn.Linear(num_features, number_classes)
-    model.load_state_dict(torch.load(model_path))
+    model.load_state_dict(torch.load(model_path, map_location=torch.device("cpu")))
     model.eval()
 
     return model
@@ -64,7 +65,13 @@ def predict_producer(model, input_image):
 
     return label_id[predicted_class]
 
-app = FastAPI()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    global inference_model
+    inference_model = create_model(model_path)
+    yield
+
+app = FastAPI(lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -84,12 +91,12 @@ def healthz():
 
 @app.post("/classify-producer")
 async def classify_producer(uploadFile: UploadFile):
-    print(uploadFile)
-    image = Image.open(uploadFile.file)
+    if inference_model is None:
+        raise HTTPException(status_code=503, detail="Model is not loaded yet")
 
-    model = create_model(model_path)
+    image = Image.open(uploadFile.file).convert("RGB")
     preprocessed_image = preprocess_test_image(image)
-    return {"producer": predict_producer(model, preprocessed_image)}
+    return {"producer": predict_producer(inference_model, preprocessed_image)}
 
 if __name__ == "__main__":
     uvicorn.run(app, host=api_host, port=api_port)
