@@ -7,7 +7,22 @@ export async function getWines(filters: FilterProps) {
 
     const { producer, country, vintage, wine_type, limit } = filters;
     let queryString: any = {}
-    let wines;
+    const normalizedLimit = Number(limit) || 10;
+    const projection = {
+        wine_id: 1,
+        appellation: 1,
+        producer: 1,
+        region: 1,
+        country: 1,
+        vintage: 1,
+        wine_type: 1,
+        grape_variety: 1,
+        alcohol_content: 1,
+        volume: 1,
+        image_filename: 1,
+        price: 1,
+        description: 1,
+    };
 
     if (producer !== '') {
         queryString.producer = producer;
@@ -22,20 +37,12 @@ export async function getWines(filters: FilterProps) {
         queryString.wine_type = wine_type;
     }
 
-    console.log(queryString)
-    if (Object.keys(queryString).length > 0) {
-        wines = await Product.find(queryString).exec();
-    } else {
-        wines = await Product.find().exec();
-    }
-
-    wines = JSON.parse(JSON.stringify(wines))
-
-    let limitWines = wines.slice(0, limit)
-
-    console.log(`${wines!.length} wines found on the database but take only ${limitWines!.length}`)
-
-    return limitWines;
+    const wines = await Product.find(queryString, projection).limit(normalizedLimit).lean().exec();
+    const serializedWines = wines.map((wine: any) => ({
+        ...wine,
+        _id: wine._id?.toString?.() ?? wine._id,
+    }));
+    return serializedWines;
 }
 
 export default getWines;

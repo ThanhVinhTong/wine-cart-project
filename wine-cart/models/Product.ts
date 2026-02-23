@@ -16,6 +16,11 @@ const ProductSchema = new Schema({
     description: String,
 })
 
+ProductSchema.index({ producer: 1 });
+ProductSchema.index({ country: 1 });
+ProductSchema.index({ vintage: 1 });
+ProductSchema.index({ wine_type: 1 });
+
 const Product = models?.Product || model('Product', ProductSchema, 'wines');
 
 export default Product;

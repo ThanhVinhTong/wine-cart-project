@@ -33,7 +33,7 @@ const WineCard = ({ wine }: WineCardProps) => {
                 <Image 
                     src={`/images/${image_filename}`}
                     alt='Wine Model'
-                    fill priority
+                    fill
                     className='object-contain'
                 />
             </div>

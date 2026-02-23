@@ -1,7 +1,6 @@
 import { CustomFilter, Hero, SearchBar, ShowMore, WineCard } from '@/components';
 import getWines from '../api/products';
 import { vintages, wine_type } from '@/constants';
-import getAccounts from '../api/accounts';
 
 export default async function Home({ searchParams }: any) {
   const allWines = await getWines({
@@ -11,8 +10,6 @@ export default async function Home({ searchParams }: any) {
     wine_type: searchParams.wine_type || '',
     limit: searchParams.limit || 10,
   });
-
-  const allAccounts = await getAccounts();
 
   const isDataEmpty = !Array.isArray(allWines) || allWines.length < 1 || !allWines;
 
@@ -38,8 +35,8 @@ export default async function Home({ searchParams }: any) {
         {!isDataEmpty ? (
           <section>
             <div className="home__wines-wrapper">
-              {allWines?.map((wine) => (
-                <WineCard wine={wine} />
+              {allWines?.map((wine: any, index: number) => (
+                <WineCard key={wine.wine_id || wine._id || `${wine.appellation}-${index}`} wine={wine} />
               ))}
             </div>
 
