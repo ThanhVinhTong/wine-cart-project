@@ -1,7 +1,6 @@
 import torch
 import uvicorn
 from PIL import Image
-from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -64,13 +63,13 @@ def predict_producer(model, input_image):
 
     return label_id[predicted_class]
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
+def get_model():
     global inference_model
-    inference_model = create_model(model_path)
-    yield
+    if inference_model is None:
+        inference_model = create_model(model_path)
+    return inference_model
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
@@ -90,12 +89,13 @@ def healthz():
 
 @app.post("/classify-producer")
 async def classify_producer(uploadFile: UploadFile):
-    if inference_model is None:
+    image = Image.open(uploadFile.file).convert("RGB")
+    model = get_model()
+    if model is None:
         raise HTTPException(status_code=503, detail="Model is not loaded yet")
 
-    image = Image.open(uploadFile.file).convert("RGB")
     preprocessed_image = preprocess_test_image(image)
-    return {"producer": predict_producer(inference_model, preprocessed_image)}
+    return {"producer": predict_producer(model, preprocessed_image)}
 
 if __name__ == "__main__":
     uvicorn.run(app, host=api_host, port=api_port)
