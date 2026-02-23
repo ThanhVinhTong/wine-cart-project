@@ -9,6 +9,7 @@ import classNames from 'classnames/bind';
 import DataTopPicks from './DataTopPick';
 import Link from 'next/link';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import Image from 'next/image';
 const cx = classNames.bind(styles);
 
 const SampleNextArrow = (props: any) => {
@@ -70,11 +71,11 @@ export function TopPick() {
           {DataTopPicks.map((value, index) => (
             <div className={cx('content')} key={index}>
               <div className={cx('product-img')}>
-                <img src={value.image} alt="" />
+                <Image src={value.image} alt={value.link} width={180} height={240} />
               </div>
               <div className={cx('product-body')}>
                 <div className={cx('top-shopping')}>
-                  <img src={value.babel} alt="" />
+                  <Image src={value.babel} alt="Top pick label" width={100} height={32} />
                   <div className={cx('border')}>{value.icon}</div>
                 </div>
                 <h5 className={cx('product-title')}>

@@ -92,3 +92,5 @@ export const WSInput = forwardRef((props: InputProps, ref) => {
     </div>
   );
 });
+
+WSInput.displayName = 'WSInput';

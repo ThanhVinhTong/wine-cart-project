@@ -11,6 +11,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import DataSlider from './DataSlide';
+import Image from 'next/image';
 
 const cx = classNames.bind(styles);
 const SampleNextArrow = (props: any) => {
@@ -51,7 +52,7 @@ export function SliderBanner() {
           {DataSlider.map((value, index) => {
             return (
               <div className={cx('box-slider')} key={index}>
-                <img src={value.image} alt="" />
+                <Image src={value.image} alt="Banner wine slide" width={1200} height={520} />
               </div>
             );
           })}

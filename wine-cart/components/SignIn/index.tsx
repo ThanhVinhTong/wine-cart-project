@@ -72,7 +72,7 @@ export function SignIn() {
                   Sign In
                 </WSButton>
                 <p className={cx('have-account')}>
-                  Don't have an account? {''}
+                  Don&apos;t have an account? {''}
                   <WSButton href="/signup" className={cx('sign-in')}>
                     Sign Up
                   </WSButton>

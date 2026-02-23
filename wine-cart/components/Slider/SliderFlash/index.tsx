@@ -8,6 +8,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { WSButton } from '@/components';
+import Image from 'next/image';
 
 const cx = classNames.bind(styles);
 
@@ -49,9 +50,11 @@ export function SliderFlash() {
 				<div className={cx('row')}>
 					<div className={cx('left')}>
 					<div className={cx('content-left')}>
-						<img
-							src="../../../../../images/bottleWines/wine-bottle.png"
-							alt=""
+						<Image
+							src="/images/bottleWines/wine-bottle.png"
+							alt="Wine bottle"
+							width={240}
+							height={480}
 						/>
 						<h5>Guaranteed Rose Wine</h5>
 						<p>
@@ -74,7 +77,7 @@ export function SliderFlash() {
 										</div>
 										<div className={cx('product-image')}>
 										<Link href="/products">
-											<img src={value.image} alt="" />
+											<Image src={value.image} alt={value.title} width={220} height={280} />
 										</Link>
 										</div>
 										<div className={cx('product-content')}>
