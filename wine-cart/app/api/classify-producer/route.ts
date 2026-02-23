@@ -2,9 +2,12 @@ import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
   try {
-    const upstreamBaseUrl =
+    const upstreamBaseUrlRaw =
       process.env.WINE_FINDER_API_URL || process.env.NEXT_PUBLIC_WINE_FINDER_API_URL || 'http://localhost:8000';
-    const upstreamUrl = `${upstreamBaseUrl.replace(/\/$/, '')}/classify-producer`;
+    const upstreamBaseUrl = upstreamBaseUrlRaw.replace(/\/$/, '');
+    const upstreamUrl = upstreamBaseUrl.endsWith('/classify-producer')
+      ? upstreamBaseUrl
+      : `${upstreamBaseUrl}/classify-producer`;
 
     const incomingFormData = await req.formData();
     const uploadFile = incomingFormData.get('uploadFile');
@@ -25,7 +28,7 @@ export async function POST(req: Request) {
     const responseText = await upstreamResponse.text();
     if (!upstreamResponse.ok) {
       return NextResponse.json(
-        { error: 'Upstream classify API failed', status: upstreamResponse.status, detail: responseText },
+        { error: 'Upstream classify API failed', upstreamUrl, status: upstreamResponse.status, detail: responseText },
         { status: upstreamResponse.status }
       );
     }
