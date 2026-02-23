@@ -82,7 +82,7 @@ def root():
 def healthz():
     return {"ok": True}
 
-@app.post("/")
+@app.post("/classify-producer")
 async def classify_producer(uploadFile: UploadFile):
     print(uploadFile)
     image = Image.open(uploadFile.file)
