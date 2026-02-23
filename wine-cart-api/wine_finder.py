@@ -12,7 +12,6 @@ from torchvision.transforms import ToTensor, Normalize, Resize
 from torchvision import models
 
 model_path = 'trained_model/model_resnet50_weight_final.pth'
-model_weights = 'ResNet50_Weights.DEFAULT'
 number_classes = 75
 api_host = "127.0.0.1"
 api_port = 8000
@@ -37,7 +36,7 @@ label_id = ['7colores', 'abtao', 'albertbichot', 'allegrini', 'anakena',
             'yali', 'zenato']
 
 def create_model(model_path):
-    model = models.resnet50(weights=model_weights)
+    model = models.resnet50(weights=None)
     num_features = model.fc.in_features
     model.fc = nn.Linear(num_features, number_classes)
     model.load_state_dict(torch.load(model_path, map_location=torch.device("cpu")))
