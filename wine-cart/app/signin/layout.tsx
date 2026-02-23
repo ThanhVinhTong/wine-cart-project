@@ -1,6 +1,7 @@
 'use client';
 
 import { WSButton, FooterContent } from '@/components';
+import Image from 'next/image';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -11,7 +12,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="flex justify-between">
               <div className="flex">
                 <WSButton href="/" className="flex items-center">
-                  <img src="../../../images/Logo2.png" alt="" className="w-[230px] h-[40px]" />
+                  <Image src="/images/Logo2.png" alt="Wine Cart logo" width={230} height={40} />
                 </WSButton>
                 <div className="text-2xl text-white font-bold whitespace-nowrap flex items-center">Sign In</div>
               </div>
