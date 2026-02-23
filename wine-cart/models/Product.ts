@@ -16,6 +16,6 @@ const ProductSchema = new Schema({
     description: String,
 })
 
-const Product = models?.Product || model('Product', ProductSchema);
+const Product = models?.Product || model('Product', ProductSchema, 'wines');
 
 export default Product;
