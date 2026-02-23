@@ -1,1 +1,6 @@
 wine-cart/.env
+wine-cart/.env.local
+wine-cart-api/.env
+wine-cart-api/.env.local
+wine-cart-restore-data/.env
+wine-cart-restore-data/.env.local

@@ -7,7 +7,8 @@ import { useRouter } from 'next/navigation';
 import { ChangeEvent, useState } from 'react';
 
 const Hero = () => {
-  const apiUrl = 'http://localhost:8000/';
+  const baseUrl = process.env.NEXT_PUBLIC_WINE_FINDER_API_URL || "http://localhost:8000";
+  const classifyProducerUrl = `${baseUrl}/classify-producer`;
 
   const router = useRouter();
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -22,23 +23,38 @@ const Hero = () => {
   };
 
   const handleSubmit = async () => {
+    if (!selectedFile) {
+      console.error('Please select an image before submitting.');
+      return;
+    }
+
     const formData = new FormData();
 
-    formData.append('uploadFile', selectedFile as Blob, selectedFile?.name);
+    formData.append('uploadFile', selectedFile as Blob, selectedFile.name);
 
-    const requestOptions = {
-      method: 'POST',
-      body: formData,
-    };
-
-    await fetch(apiUrl, requestOptions)
-      .then((response) => response.json())
-      .then(function (response) {
-        console.log('returned message: ', response);
-        const newPathName = updateSearchParams('producer', `${response['producer']}`);
-
-        router.push(newPathName);
+    try {
+      const response = await fetch(classifyProducerUrl, {
+        method: 'POST',
+        body: formData,
       });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        throw new Error(`API ${response.status}: ${errorText}`);
+      }
+
+      const data = await response.json();
+      console.log('returned message: ', data);
+
+      if (!data?.producer) {
+        throw new Error('Missing "producer" in API response.');
+      }
+
+      const newPathName = updateSearchParams('producer', `${data.producer}`);
+      router.push(newPathName);
+    } catch (error) {
+      console.error('Failed to fetch wine prediction:', error);
+    }
 
     if (selectedFile) {
       setImagePrev(URL.createObjectURL(selectedFile));
