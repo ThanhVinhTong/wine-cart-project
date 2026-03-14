@@ -11,3 +11,5 @@ def create_new_folder(folder_name="default_folder"):
         rel_path = os.path.relpath(folder_name)
         print(f"Folder '{folder_name}' already exists at {rel_path}")
         return rel_path
+// automation-note [2026-03-14T14:09:42.548298]
+// Add note to cover empty, short, and unicode password edge cases.
