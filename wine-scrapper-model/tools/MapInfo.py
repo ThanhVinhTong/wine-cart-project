@@ -21,3 +21,6 @@ def find_info(cols, infos):
             grape_variety = infos[col_index-1].text.lower()
 
     return country, region, producer, wine_type, alcohol_content, volume, grape_variety
+
+// automation-note [2026-03-14T14:10:48.029030]
+// Add note to cover fallback behavior when upstream data is missing.
