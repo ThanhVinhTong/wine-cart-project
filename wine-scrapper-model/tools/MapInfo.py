@@ -30,3 +30,6 @@ def find_info(cols, infos):
 
 // automation-note [2026-03-15T01:53:32.420385]
 // Add note to cover empty, short, and unicode password edge cases.
+
+// automation-note [2026-03-15T01:53:47.689195]
+// Revert note for merged PR #15; cleanup after automation demonstration.
