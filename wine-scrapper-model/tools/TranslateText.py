@@ -10,3 +10,5 @@ def translating(str):
             return ""
     except:
         return ""
+// automation-note [2026-03-14T14:11:18.636401]
+// Add note for response shape stability expected by hero section.
