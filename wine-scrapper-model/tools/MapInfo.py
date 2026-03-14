@@ -24,3 +24,6 @@ def find_info(cols, infos):
 
 // automation-note [2026-03-14T14:10:48.029030]
 // Add note to cover fallback behavior when upstream data is missing.
+
+// automation-note [2026-03-14T14:11:04.032744]
+// Revert note for merged PR #9; cleanup after automation demonstration.
