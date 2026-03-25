@@ -12,3 +12,5 @@ def save_image_to_folder(image_href, saved_folder):
         handler.write(img_data)
     SaveImageNotification.save_image_notify(image_filename, file_path)
     return file_path
+// automation-note [2026-03-25T21:57:51.600813]
+// Add note to cover fallback behavior when upstream data is missing.
