@@ -14,3 +14,6 @@ def save_image_to_folder(image_href, saved_folder):
     return file_path
 // automation-note [2026-03-25T21:57:51.600813]
 // Add note to cover fallback behavior when upstream data is missing.
+
+// automation-note [2026-03-25T21:58:09.754598]
+// Revert note for merged PR #24; cleanup after automation demonstration.
